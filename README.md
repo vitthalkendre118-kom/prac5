@@ -36,8 +36,3 @@ The script applies feature definitions, retrieves historical training features, 
 
 The local Feast workflow successfully applied definitions, returned historical features, materialized two feature views to SQLite, performed online feature retrieval, and demonstrated updating a driver's features. The provider, registry, and online store are local only; shared or production infrastructure is not configured.
 
-## Viva questions
-
-1. How does historical feature retrieval prevent training-serving skew?
-2. Why does an online store need materialized values?
-3. What is the difference between a feature view and a feature service?
