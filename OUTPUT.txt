@@ -1,0 +1,28 @@
+Experiment 5 — Local Feast feature-store workflow
+
+Feast: 0.67.0
+Provider: local
+Online store: SQLite
+Command: python test_workflow.py
+Working directory: experiment-05-feature-store/feast_repo/feature_repo
+
+Applied:
+- Entity: driver
+- Feature views: driver_hourly_stats, driver_hourly_stats_fresh
+- On-demand feature views and feature services
+- Label view: driver_quality_labels
+
+Historical feature retrieval returned 3 rows (13 columns). Sample conv_rate_plus_val2 values:
+driver 1001: 10.967520
+driver 1002: 20.541862
+driver 1003: 30.870095
+
+Materialization:
+Materializing 2 feature views into the SQLite online store.
+
+Online retrieval for drivers 1001 and 1002 returned feature values. A subsequent stream push updated driver 1001:
+conv_rate: 1.0
+avg_daily_trips: 1000
+driver_profile: {'age': '30', 'name': 'driver_1001_updated'}
+
+Result: Feast apply, historical retrieval, materialization, online retrieval, and the stream-update demonstration completed. The local provider/store are demonstration infrastructure, not a shared production service.
